@@ -84,7 +84,8 @@ async def delete_cloned_bot(client, message):
         else:
             await message.reply_text("**⚠️ ᴛʜᴇ ʙᴏᴛ ᴛᴏᴋᴇɴ ᴘʀᴏᴠɪᴅᴇᴅ ɪs ɴᴏᴛ ɪɴ ᴛʜᴇ ᴄʟᴏɴᴇᴅ ʟɪsᴛ.**")
     except Exception as e:
-        logging.exception("Error while deleting cloned bot.")
+        return
+        #logging.exception("Error while deleting cloned bot.")
         await message.reply_text("An error occurred while deleting the cloned bot.")
 
 # Don't Remove Credit Tg - @VJ_Botz
@@ -104,5 +105,6 @@ async def restart_bots():
             )
             await ai.start()
         except Exception as e:
-            logging.exception(f"Error while restarting bot with token {bot_token}: {e}")
+            return
+            #logging.exception(f"Error while restarting bot with token {bot_token}: {e}")
 
